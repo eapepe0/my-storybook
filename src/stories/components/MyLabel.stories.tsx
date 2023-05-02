@@ -5,7 +5,8 @@ import { MyLabel } from "../../components/MyLabel";
 //* hacemos esta configuracion , el titulo seria donde pondriamos el componente en SB , component el componente a probar
 export default {
     title : "UI/MyLabel",
-    component : MyLabel
+    component : MyLabel,
+    tags: ['autodocs'], //* genera automaticamente los docs
 } as Meta <typeof MyLabel>
 
 

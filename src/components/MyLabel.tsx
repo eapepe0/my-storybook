@@ -1,7 +1,13 @@
 import './MyLabel.css'
 
 export interface Props{
+    /**
+        * ¿Que dira el label?
+    */
     label: string;
+    /**
+        * ¿Cual sera su tamaño?
+    */
     size : "normal" | "h1" | "h2" | "h3";
 } 
 
