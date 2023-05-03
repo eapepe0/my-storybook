@@ -9,13 +9,22 @@ export interface Props{
         * ¿Cual sera su tamaño?
     */
     size : "normal" | "h1" | "h2" | "h3";
+    /**
+        * ¿Sera en Mayusculas?
+    */
+    allCaps? : true | false;
+    /**
+        * ¿Elige entre los 3 colores?
+    */
+    color? : "primary" | "secondary" | "tertiary";
+
 } 
 
 
-export const MyLabel = ({label="No label" , size = 'normal'}:Props) => {
+export const MyLabel = ({label="No label" , size = 'normal' , allCaps = false , color = "primary"}:Props) => {
   return (
-    <span className = {`${size}`} >
-        {label}
+    <span className = {`${size}  color: text-${color}`} >
+        {allCaps === true ?  label.toUpperCase() : label}
     </span>
   )
 }
