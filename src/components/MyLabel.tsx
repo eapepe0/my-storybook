@@ -17,13 +17,16 @@ export interface Props{
         * ¿Elige entre los 3 colores?
     */
     color? : "primary" | "secondary" | "tertiary";
-
+    /**
+        * ¿Elige su color de fuente?
+    */
+   fontColor? : string;
 } 
 
 
-export const MyLabel = ({label="No label" , size = 'normal' , allCaps = false , color = "primary"}:Props) => {
+export const MyLabel = ({label="No label" , size = 'normal' , allCaps = false , color = "primary" , fontColor="#aaaaaaa"}:Props) => {
   return (
-    <span className = {`${size}  color: text-${color}`} >
+    <span className = {`${size}  color: text-${color} label`} style={{color: fontColor }} >
         {allCaps === true ?  label.toUpperCase() : label}
     </span>
   )
