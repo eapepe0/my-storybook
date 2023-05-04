@@ -12,7 +12,7 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "typescript":">=4.0.0"
+    "typescript": ">=4.0.0"
   },
   "release": {
     "branches": [
@@ -42,8 +42,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=40d91680a0ac",
-    "clean" : "rimraf dist/",
-    "copy-files" : "copyfiles -u 1 src/**/*.css dist/"
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.css dist/"
   },
   "eslintConfig": {
     "extends": [
@@ -78,8 +78,17 @@
     "copyfiles": "^2.4.1",
     "prop-types": "15.8.1",
     "rimraf": "^5.0.0",
+    "semantic-release": "^21.0.2",
     "storybook": "7.0.7"
   },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
   "readme": "ERROR: No README data found!",
   "_id": "my-storybook@0.1.0"
 }
