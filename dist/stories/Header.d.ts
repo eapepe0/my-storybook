@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import './header.css';
-declare type User = {
+type User = {
     name: string;
 };
 export interface HeaderProps {

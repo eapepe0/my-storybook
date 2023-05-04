@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -13,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -34,20 +35,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { within, userEvent } from '@storybook/testing-library';
-import { Page } from './Page';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LoggedIn = exports.LoggedOut = void 0;
+var testing_library_1 = require("@storybook/testing-library");
+var Page_1 = require("./Page");
 var meta = {
     title: 'Example/Page',
-    component: Page,
+    component: Page_1.Page,
     parameters: {
         // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'fullscreen',
     },
 };
-export default meta;
-export var LoggedOut = {};
+exports.default = meta;
+exports.LoggedOut = {};
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
-export var LoggedIn = {
+exports.LoggedIn = {
     play: function (_a) {
         var canvasElement = _a.canvasElement;
         return __awaiter(void 0, void 0, void 0, function () {
@@ -55,13 +58,13 @@ export var LoggedIn = {
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
-                        canvas = within(canvasElement);
+                        canvas = (0, testing_library_1.within)(canvasElement);
                         return [4 /*yield*/, canvas.getByRole('button', {
                                 name: /Log in/i,
                             })];
                     case 1:
                         loginButton = _b.sent();
-                        return [4 /*yield*/, userEvent.click(loginButton)];
+                        return [4 /*yield*/, testing_library_1.userEvent.click(loginButton)];
                     case 2:
                         _b.sent();
                         return [2 /*return*/];

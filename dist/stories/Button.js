@@ -1,3 +1,4 @@
+"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -20,13 +21,16 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { jsx as _jsx } from "react/jsx-runtime";
-import './button.css';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Button = void 0;
+var jsx_runtime_1 = require("react/jsx-runtime");
+require("./button.css");
 /**
  * Primary UI component for user interaction
  */
-export var Button = function (_a) {
+var Button = function (_a) {
     var _b = _a.primary, primary = _b === void 0 ? false : _b, _c = _a.size, size = _c === void 0 ? 'medium' : _c, backgroundColor = _a.backgroundColor, label = _a.label, props = __rest(_a, ["primary", "size", "backgroundColor", "label"]);
     var mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-    return (_jsx("button", __assign({ type: "button", className: ['storybook-button', "storybook-button--".concat(size), mode].join(' '), style: { backgroundColor: backgroundColor } }, props, { children: label }), void 0));
+    return ((0, jsx_runtime_1.jsx)("button", __assign({ type: "button", className: ['storybook-button', "storybook-button--".concat(size), mode].join(' '), style: { backgroundColor: backgroundColor } }, props, { children: label })));
 };
+exports.Button = Button;
